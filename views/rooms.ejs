@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>List Room</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="/stylesheets/style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-9">
+					<br />
+					<h2>Hello <span class="labelUserName" id="username"><%= username %></span></h2>
+					<br />
+					<div>
+						<form class="form-inline">
+							<label for="createRoomID" class="mr-sm-2">RoomID:</label>
+							<input type="text" id="createRoomID" placeholder="Enter RoomID" autocomplete="off" class="form-control mb-2 mr-sm-2" />
+							<button type="submit" class="btn btn-primary mb-2" id="buttonCreateAndJoin">Create & Join</button>
+						</form>
+					</div>
+					<br />
+					<br />
+					<p>List Room</p>
+					<table class="table table-bordered">
+						<thead class="thead-light">
+							<tr>
+								<th>RoomID</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<tbody id="tbody_rooms">
+							<tr>
+								<td>Default</td>
+								<td>
+									<button class="btn btn-primary mb-2 mr-sm-2">Join</button>
+									<button class="btn btn-primary mb-2">Delete</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="col-sm-3">
+					<button class="btn btn-primary" style="width: 100%;" id="btn-login">Back to Login</button>
+					<p></p>
+					<table class="table table-bordered">
+						<thead class="thead-light">
+							<tr>
+								<th>User Online</th>
+							</tr>
+						</thead>
+						<tbody id="tbody_users">
+							<tr>
+								<td>Default</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<script src="/bundle_rooms.js"></script>
+		<script>
+			$("#btn-login").on("click", function (e) {
+				window.location.href = window.location.origin + "/login";
+			});
+		</script>
+	</body>
+</html>

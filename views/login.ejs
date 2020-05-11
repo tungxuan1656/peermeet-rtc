@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Login</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<span class="hello">Hello</span>
+			<div class="form-login">
+				<form action="/login" method="post" onsubmit="checkUserName()">
+					<div class="form-group">
+						<label for="username">Username:</label>
+						<input type="text" class="form-control" id="username" name="username" autocomplete="off" />
+					</div>
+					<div class="form-group" style="display: none;">
+						<label for="pwd">Password:</label>
+						<input type="password" class="form-control" id="pwd" name="password" value="12345"/>
+					</div>
+					<button type="submit" class="btn btn-primary" style="width: 100%;">Join</button>
+				</form>
+			</div>
+		</div>
+		<script>
+			function checkUserName() {
+				var username = document.getElementById('username').value;
+				var regex = /^[A-Za-z0-9]+$/;
+				var valid = regex.test(username);
+				if (!valid) {
+					alert("Chỉ được chứa chữ cái và số.");
+					return false;
+				}
+			}
+		</script>
+		<style>
+			.hello {
+				font-size: 100px;
+				color: #454545;
+			}
+			.form-login {
+				width: 500px;
+				/* height: 500px; */
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+			}
+		</style>
+	</body>
+</html>
